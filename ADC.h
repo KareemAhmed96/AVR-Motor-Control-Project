@@ -12,12 +12,12 @@
 #include "std_types.h"
 #include "micro_config.h"
 
-#define ON                   1
-#define OFF                  0
+#define ON                   	1
+#define OFF                  	0
 
-#define ADC_ENABLE		 	 1
-#define ADC_AUTO_TRIG_EN	 1
-#define INTERRUPT_EN  		 ON
+#define ADC_ENABLE		1
+#define ADC_AUTO_TRIG_EN	1
+#define INTERRUPT_EN  		ON
 
 extern volatile uint16 g_result;
 

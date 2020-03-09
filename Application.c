@@ -49,7 +49,6 @@ int main(void)
 
 	for( ; ; )
 	{
-
 		if(g_Current_State == 1)
 		{  	
 			// Rotation direction controlled by external interrupt connected to a push button

@@ -106,8 +106,8 @@ int main(void)
 	return 0;
 }
 
-ISR(INT0_vect){
-
+ISR(INT0_vect)
+{
 	// Swapping
 	g_Temp = g_Current_State;
 	g_Current_State = g_Previous_State;

@@ -18,8 +18,8 @@
 #define CONTROL_REG   PORTD
 #define CONNTROL_DIR  DDRD
 
-#define DATA_REG		  PORTC
-#define DATA_DIR		  DDRC
+#define DATA_REG    PORTC
+#define DATA_DIR    DDRC
 
 void LCD_init(void);
 void LCD_sendCommand(uint8 command);

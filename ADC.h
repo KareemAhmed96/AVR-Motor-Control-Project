@@ -168,6 +168,7 @@ typedef union {
  * 	   Also choosing interrupts or polling is implemented inside this function
  */
 void ADC_init(const ADC_Config_Type *ADC_Config_Ptr);
+
 /*
  * 2- ADC_readChannel()
  *	  Using Interrupts & Polling

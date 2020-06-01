@@ -11,13 +11,13 @@ volatile uint16 g_result;
 
 void ADC_init(const ADC_Config_Type *ADC_Config_Ptr){
 
-	ADMUX = (ADMUX & 0x3F) | ((ADC_Config_Ptr -> voltageRef) << REFS0); //Two Bits for Voltage Reference
-	ADMUX = (ADMUX & 0xDF) | ((ADC_Config_Ptr -> resAdjust)  << ADLAR); //Left or Right Adjustment
+	ADMUX = (ADMUX & 0x3F) | ((ADC_Config_Ptr -> voltageRef) << REFS0); 	//Two Bits for Voltage Reference
+	ADMUX = (ADMUX & 0xDF) | ((ADC_Config_Ptr -> resAdjust)  << ADLAR); 	//Left or Right Adjustment
 
-	ADCSRA = (ADCSRA & 0xF8) | (ADC_Config_Ptr -> prescalerBits); //Pre-scaler Division factor 3-Bits
+	ADCSRA = (ADCSRA & 0xF8) | (ADC_Config_Ptr -> prescalerBits); 		//Pre-scaler Division factor 3-Bits
 
-	ADCSRA = (ADCSRA & 0xDF) | (ADC_AUTO_TRIG_EN << ADATE);               //Auto Trigger Enable
-	SFIOR  = (SFIOR & 0x1F)  | ((ADC_Config_Ptr -> trigSource) << ADTS0); //Auto Trigger Source
+	ADCSRA = (ADCSRA & 0xDF) | (ADC_AUTO_TRIG_EN << ADATE);               	//Auto Trigger Enable
+	SFIOR  = (SFIOR & 0x1F)  | ((ADC_Config_Ptr -> trigSource) << ADTS0); 	//Auto Trigger Source
 
 #if (INTERRUPT_EN == ON)
 

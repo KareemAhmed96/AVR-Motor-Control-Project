@@ -91,13 +91,13 @@ typedef struct {
 
 /*****************************************************************
  *           Analog Channel and Gain Selection Bits              *
- * 			----------------------------------------		     *
+ * 			---------------------------------------- *
  * They are split into three enumerations, one for each set of   *
- * configurations. 												 *
- * From channel 1 to channel 7: Single Ended Input 		  	 	 *
+ * configurations. 						 *
+ * From channel 1 to channel 7: Single Ended Input 		 *
  * From option 8 to option 15:  Double Ended Input with gain     *
  * From option 16 to option 32: Double Ended Input without gain  *
- * 																 *
+ * 								 *
  *****************************************************************/
 
 // First enumeration (3-bits are needed)

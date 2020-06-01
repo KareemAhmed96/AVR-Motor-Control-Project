@@ -4,6 +4,7 @@
  *  Created on: Apr 19, 2019
  *      Author: Kareem
  */
+
 #include "LCD.h"
 
 void LCD_init(void){
@@ -20,10 +21,10 @@ void LCD_sendCommand(uint8 command){
 
 	CLEAR_BIT(CONTROL_REG, 4); 		// RS = 0
 	CLEAR_BIT(CONTROL_REG, 5); 		// R/W = 0
-	_delay_ms(1); 					// t(as) 50 n seconds
+	_delay_ms(1); 				// t(as) 50 n seconds
 
 	SET_BIT(CONTROL_REG, 6); 		// Enable = 1
-	_delay_ms(1);					//190 n seconds
+	_delay_ms(1);				//190 n seconds
 
 	DATA_REG = command;
 	_delay_ms(1);
@@ -37,10 +38,10 @@ void LCD_displayCharacter(uint8 data){
 
 	SET_BIT(CONTROL_REG, 4); 		// RS = 1
 	CLEAR_BIT(CONTROL_REG, 5); 		// R/W = 0
-	_delay_ms(1); 					// t(as) 50 n seconds
+	_delay_ms(1); 				// t(as) 50 n seconds
 
 	SET_BIT(CONTROL_REG, 6); 		// Enable = 1
-	_delay_ms(1);					//190 n seconds
+	_delay_ms(1);				//190 n seconds
 
 	DATA_REG = data;
 	_delay_ms(1);
@@ -49,7 +50,7 @@ void LCD_displayCharacter(uint8 data){
 	_delay_ms(1);
 }
 
-void LCD_displayString(const uint8* str){  //pointer to constant data
+void LCD_displayString(const uint8* str){  	//pointer to constant data
 
 	uint8 i = 0;
 
@@ -60,6 +61,7 @@ void LCD_displayString(const uint8* str){  //pointer to constant data
 	}
 
 	 /*
+	 // Another method
 	 while(*str != '\0'){
 
 	 LCD_displayCharacter(*str);
@@ -70,8 +72,8 @@ void LCD_displayString(const uint8* str){  //pointer to constant data
 
 void LCD_intgerToString(int data)
 {
-   uint8 buff[16]; /* String to hold the ascii result */
-   itoa(data,buff,10); /* 10 for decimal */
+   uint8 buff[16]; 		/* String to hold the ascii result */
+   itoa(data,buff,10); 		/* 10 for decimal */
    LCD_displayString(buff);
 }
 
